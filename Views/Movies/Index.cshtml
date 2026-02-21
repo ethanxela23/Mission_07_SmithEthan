@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Mission07_Smith_Ethan.Models.Movie>
+
+@{
+    ViewData["Title"] = "Movie Collection";
+}
+
+<h2>Movie Collection</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add New Movie</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Director</th>
+            <th>Rating</th>
+            <th>Edited</th>
+            <th>Lent To</th>
+            <th>Copied To Plex</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Category?.CategoryName</td>
+                <td>@item.Title</td>
+                <td>@item.Year</td>
+                <td>@item.Director</td>
+                <td>@item.Rating</td>
+                <td>@item.Edited</td>
+                <td>@item.LentTo</td>
+                <td>@item.CopiedToPlex</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.MovieId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.MovieId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.MovieId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

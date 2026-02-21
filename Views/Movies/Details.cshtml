@@ -1,0 +1,41 @@
+﻿@model Mission07_Smith_Ethan.Models.Movie
+
+@{
+    ViewData["Title"] = "Movie Details";
+}
+
+<h2>Movie Details</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">Category</dt>
+        <dd class="col-sm-9">@Model.Category?.CategoryName</dd>
+
+        <dt class="col-sm-3">Title</dt>
+        <dd class="col-sm-9">@Model.Title</dd>
+
+        <dt class="col-sm-3">Year</dt>
+        <dd class="col-sm-9">@Model.Year</dd>
+
+        <dt class="col-sm-3">Director</dt>
+        <dd class="col-sm-9">@Model.Director</dd>
+
+        <dt class="col-sm-3">Rating</dt>
+        <dd class="col-sm-9">@Model.Rating</dd>
+
+        <dt class="col-sm-3">Edited</dt>
+        <dd class="col-sm-9">@Model.Edited</dd>
+
+        <dt class="col-sm-3">Lent To</dt>
+        <dd class="col-sm-9">@Model.LentTo</dd>
+
+        <dt class="col-sm-3">Copied To Plex</dt>
+        <dd class="col-sm-9">@Model.CopiedToPlex</dd>
+
+        <dt class="col-sm-3">Notes</dt>
+        <dd class="col-sm-9">@Model.Notes</dd>
+    </dl>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.MovieId" class="btn btn-primary">Edit</a>
+<a asp-action="Index" class="btn btn-secondary">Back</a>
